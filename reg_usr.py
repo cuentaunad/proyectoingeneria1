@@ -13,6 +13,15 @@
 # limitations under the License.
 
 import streamlit as st
+import datetime
 
 def reg_usr():
     st.subheader("Registro de usuarios")
+
+    name = st.text_input('Nombres - Escriba', '')
+    last_name = st.text_input('Apellidos -  Escriba', '')
+    d = st.date_input("Fecha de nacimiento -  Escoja en el calendario", datetime.date(datetime.date.today().year, datetime.date.today().month, datetime.date.today().day))
+    options = st.selectbox( 'Tipo de documento de identidad - Escoja', ('Cedula' , 'Pasaporte', 'Cedula de extranjeria', 'Blue'))
+    number = st.number_input('Numero de documento de identidad',format="%d", value=0)
+
+

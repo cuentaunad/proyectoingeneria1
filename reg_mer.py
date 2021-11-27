@@ -13,6 +13,12 @@
 # limitations under the License.
 
 import streamlit as st
+import datetime
 
 def reg_mer():
-    st.subheader("Registro de mercancía")
+    name = st.text_input('Nombre producto - Escriba', '')
+    last_name = st.text_input('Descripción -  Escriba', '')
+    d = st.date_input("Fecha de ingreso -  Escoja en el calendario", datetime.date(datetime.date.today().year, datetime.date.today().month, datetime.date.today().day))
+    number = st.number_input('SKU',format="%d", value=0)
+    uploaded_files = st.file_uploader("Subir foto del producto", accept_multiple_files=True)
+
