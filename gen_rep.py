@@ -16,3 +16,5 @@ import streamlit as st
 
 def gen_rep():
     st.subheader("Generación de reporte")
+    st.selectbox("Seleccione una opción", ["Reporte de ventas", "Reporte de productos"])
+    st.button("Generar reporte")

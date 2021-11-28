@@ -13,6 +13,22 @@
 # limitations under the License.
 
 import streamlit as st
+import time
+import  random
+from PIL import Image
 
 def con_mer():
     st.subheader("Consulta de mercancía")
+
+    with st.form("my_form"):
+        st.write("Buscador de productos")
+        text_input = st.text_input(label='Nombre del producto')
+
+        # Every form must have a submit button.
+        submitted = st.form_submit_button("Buscar")
+        if submitted:
+            with st.spinner('Consultando...'):
+                time.sleep(random.randint(1,5))
+                image = Image.open('car.jpg')
+                st.image(image, caption='Sunrise by the mountains')
+                st.success('Done!')
